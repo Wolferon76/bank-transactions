@@ -17,19 +17,44 @@ while True:
     if choice == '1':
         # deposit, jāpievieno jaunu transakciju
         # https://www.w3schools.com/python/python_lists_add.asp
+        deposit = int(input("Please, how much money do you want to deposit into your account: "))
+        
+        transactions.append(deposit)
+        print(transactions)
+
         pass
     elif choice == '2':
         # withdraw, jāpievieno jaunu transakciju ar mīnus zīmi
         # https://www.w3schools.com/python/python_lists_add.asp
+        Withdraw = int(input("Please, how much money do you want to Withdraw from your account: "))
+        Withdraw = Withdraw *-1
+        transactions.append(Withdraw)
+        print(transactions)
         pass
     elif choice == '3':
         # pārbaudīt atlikumu
         # jasummē visus saraksta elementus kopā ar ciklu palidzību
         # https://www.w3schools.com/python/python_for_loops.asp
+        Withdraw = Withdraw *-1
+        if Withdraw > deposit:
+            print("E.R.O.R.")
+        elif Withdraw < deposit:
+            balance = deposit - Withdraw
+            transactions.append(balance)
+           
+        print(transactions)
+
+        balance = 0
+        for t in transactions:
+            balance += t
+
+        print("Balance:", balance)
+
         pass
     elif choice == '4':
         # rāda 10 pēdējas transakcijas
         # https://www.w3schools.com/python/python_lists_access.asp (Range of Negative Indexes)
+        print(transactions[-10:-1])
         pass
     elif choice == '5':
         print("Exiting the banking system. Thank you!")
